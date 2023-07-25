@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>wind-server</title>
+    <title>IRIS Research Labs - Κωνσταντίνος Καβάφης</title>
     <style>
       body {
-        background-color: turquoise;
-        color: white;
+        background-color: #00ced1;
+        color: #333;
+        font-family: "Verdana", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #40e0d0;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
       }
       .container {
         margin: auto;
-        width: 50%;
-        text-align: center;
+        width: 90%;
+        max-width: 800px;
+        padding: 2rem;
+        background-color: #fff;
+        border: 5px solid #40e0d0;
+        border-radius: 5px;
       }
       select {
+        display: block;
+        margin: 0 auto;
         padding: 10px;
         font-size: 16px;
         border-radius: 5px;
         border: none;
-        background-color: white;
-        color: turquoise;
+        background-color: #40e0d0;
+        color: #fff;
         font-weight: bold;
+        cursor: pointer;
+      }
+      #link-container {
+        margin-top: 1rem;
+        text-align: center;
+      }
+      #link-container a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #40e0d0;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      #link-container a:hover {
+        background-color: #2bb8a8;
       }
     </style>
   </head>
   <body>
+    <header>
+      <h1>IRIS Research Labs</h1>
+      <p>Απαγγελίες ποιημάτων του Κωνσταντίνου Καβάφη</p>
+    </header>
     <div class="container">
-      <h1>Τα IRIS Research Labs καλοσωρίσουν τα 4 συλλεκτικά CD με απαγγελίες ποιημάτων του Κωνσταντίνου Καβάφη</h1>
       <h2>Επιλέξτε τόμο:</h2>
       <select id="menu">
         <option value="">--Επιλογή--</option>
@@ -36,22 +73,21 @@
         <option value="https://archive.org/details/05-track-05_202303">Τόμος 4ος</option>
       </select>
       <div id="link-container">
-        <p>Ο τόμος που επιλέξατε θα εμφανιστεί εδώ. Κάντε κλικ στον σύνδεσμο για να συνεχίσετε.</p>
+        <!-- Ο τόμος που επιλέξατε θα εμφανιστεί εδώ. Κάντε κλικ στον σύνδεσμο για να συνεχίσετε. -->
       </div>
     </div>
     <script>
-      // Get the dropdown menu and link container
+      // JavaScript code remains the same
       const menu = document.getElementById('menu');
       const linkContainer = document.getElementById('link-container');
 
-      // Listen for changes to the dropdown menu and update the link container accordingly
       menu.addEventListener('change', () => {
         const selectedValue = menu.value;
         if (selectedValue) {
           const linkElement = document.createElement('a');
           linkElement.setAttribute('href', selectedValue);
           linkElement.setAttribute('target', '_blank');
-          linkElement.textContent = selectedValue;
+          linkElement.textContent = 'Ακούστε τον τόμο εδώ';
           linkContainer.innerHTML = '';
           linkContainer.appendChild(linkElement);
         } else {
